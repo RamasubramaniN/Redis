@@ -26,11 +26,11 @@ public class ListStorage {
      */
     public static void main(String[] args) {
         ListStorage listStorage = new ListStorage();
-        listStorage.performOperation();
-        listStorage.performEmployeeOperation();
+        listStorage.stringListExample();
+        listStorage.employeeListExample();
     }
 
-    private void performEmployeeOperation() {
+    private void employeeListExample() {
         
         System.out.println("********* Employee Operation *********");
         
@@ -67,7 +67,7 @@ public class ListStorage {
         }
     }
 
-    private void performOperation() {
+    private void stringListExample() {
         System.out.println("********* Number Operation *********");
         Jedis jedis = JedisClient.getJedis();
         jedis.del(NUMBERS_KEY);

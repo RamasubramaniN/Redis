@@ -19,10 +19,10 @@ public class SetStorage {
      */
     public static void main(String[] args) {
         SetStorage setStorage = new SetStorage();
-        setStorage.performOperation();
+        setStorage.setExample();
     }
 
-    private void performOperation() {
+    private void setExample() {
         Jedis jedis = JedisClient.getJedis();
         jedis.del(SET_KEY);
         

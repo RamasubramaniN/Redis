@@ -15,11 +15,11 @@ public class StringStorage {
      */
     public static void main(String[] args) throws Exception {
         StringStorage stringStorage = new StringStorage();
-        stringStorage.performStringOperation1();
-        stringStorage.performStringOperation2();
+        stringStorage.stringExample1();
+        stringStorage.stringExample2();
     }
 
-    public void performStringOperation1() throws Exception {
+    public void stringExample1() throws Exception {
         Jedis jedis = JedisClient.getJedis();
         jedis.set("foo", "bar");
         boolean keyExists = jedis.exists("foo");
@@ -30,7 +30,7 @@ public class StringStorage {
         System.out.println(jedis.get("foo"));//Key expired. So, 'null' will be printed.
     }
 
-    private void performStringOperation2() {
+    private void stringExample2() {
         Jedis jedis = JedisClient.getJedis();
         jedis.set("count", "97");
         jedis.incr("count");
