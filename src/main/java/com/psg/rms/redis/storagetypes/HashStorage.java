@@ -85,5 +85,16 @@ public class HashStorage {
            legendListCache.add(legend);
        });
        legendList.forEach(legend -> System.out.println(legend));
+       
+       //Updating a property in the map
+       long id = idList.get(0);
+       System.out.println("Updating player. Id : " + id);
+       Map<String, String> legendMap = jedis.hgetAll(legendPrefix + id);
+       jedis.hset(legendPrefix + id, nameProperty, "Sachin Ramesh Tendulkar");//Updating name property
+       Map<String, String> legendPropertyMap = jedis.hgetAll(legendPrefix + id);
+       Legend legend = new Legend(Long.valueOf(legendPropertyMap.get(idProperty)), legendPropertyMap.get(nameProperty), legendPropertyMap.get(teamProperty), Integer.valueOf(legendPropertyMap.get(rankProperty)));
+       System.out.println(legend);
+       
+       jedis.close();
     }
 }

@@ -39,4 +39,5 @@ public class JedisClient {
     public static Jedis getJedis() {
         return getJedisConnectionPool().getResource();
     }
+  
 }

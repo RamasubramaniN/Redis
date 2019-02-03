@@ -46,5 +46,7 @@ public class StringStorage {
         
         jedis.flushAll(); //Clear all keys
         System.out.println("Total keys = " + jedis.dbSize());
+        
+        jedis.close();
     }
 }

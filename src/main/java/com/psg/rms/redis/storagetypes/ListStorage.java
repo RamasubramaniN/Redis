@@ -95,6 +95,7 @@ public class ListStorage {
         
         System.out.println("\nAll elements are poped out now. So list size : " + jedis.llen(NUMBERS_KEY));
         
+        jedis.close();
     }
 
 }

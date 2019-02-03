@@ -37,6 +37,8 @@ public class SetStorage {
         for(String element : jedis.smembers(SET_KEY)) {
             System.out.print(element + "\t");
         }
+        
+        jedis.close();
     }
     
 }
